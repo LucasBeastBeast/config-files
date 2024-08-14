@@ -1,0 +1,74 @@
+# i3status configuration file.
+
+general {
+    colors = true
+    interval = 5
+}
+
+order += "wireless _first_"
+order += "load"
+order += "cpu_temperature all"
+order += "memory"
+order += "battery all"
+order += "volume master"
+order += "time"
+
+cpu_temperature all {
+    format = "🌡️%degrees°C"
+    max_threshold = "55"
+    format_above_threshold = "❗%degrees°C❗"
+    min_width = 140
+    align = center
+}
+
+wireless _first_ {
+    color_good = "#FFFFFF"
+    format_up = "🌐 %essid (%bitrate)   "
+    format_down = "🚫 No Wifi   "
+}
+
+battery all {
+    format = "%status%percentage"
+    last_full_capacity = "true"
+    integer_battery_capacity = "true"
+    status_bat = "🔋"
+    status_chr = "⚡"
+    status_full = "💯"
+    low_threshold = "30"
+    threshold_type = "percentage"
+    min_width = 120
+    align = center
+}
+
+load {
+    format = "💻%1min"
+    max_threshold = "2"
+    format_above_threshold = "❗%1min❗"
+    min_width = 130
+    align = center
+}
+
+memory {
+    format = "💾%percentage_used"
+    threshold_degraded = "4.2Gi"
+    format_degraded = "❗%percentage_used❗"
+    threshold_critical = "2.7Gi"
+    min_width = 150
+    align = center
+}
+
+time {
+    format = "🗓️%Y-%m-%d   🕒%I:%M %p"
+    min_width = 385
+    align = center
+}
+
+volume master{
+    format = "🔊%volume"
+    format_muted = "🔇%volume"
+    device = "default"
+    mixer = "Master"
+    min_width = 120
+    align = center
+}
+

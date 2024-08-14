@@ -1,0 +1,19 @@
+# Ignore everything
+*
+
+# Do not ignore files
+!.gitignore
+!README.md
+
+# Do not ignore these directories
+!nvim/
+!kitty/
+!i3/
+!i3status/
+
+# Do not ignore files within the directories
+!nvim/**
+!kitty/**
+!i3/**
+!i3status/**
+
