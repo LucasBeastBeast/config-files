@@ -27,7 +27,7 @@ end
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'lua_ls', 'clangd' },
+  ensure_installed = { 'lua_ls', 'clangd', 'pylyzer' },
   handlers = {
     default_setup,
   },
