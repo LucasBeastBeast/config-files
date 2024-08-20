@@ -10,10 +10,13 @@
 !kitty/
 !i3/
 !i3status/
+!picom/
+!godot/
 
 # Do not ignore files within the directories
 !nvim/**
 !kitty/**
 !i3/**
 !i3status/**
-
+!picom/**
+!godot/**
