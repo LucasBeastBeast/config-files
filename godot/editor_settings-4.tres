@@ -1,6 +1,7 @@
 [gd_resource type="EditorSettings" format=3]
 
 [resource]
+interface/editor/display_scale = 3
 interface/theme/base_color = Color(0.21, 0.24, 0.29, 1)
 interface/theme/accent_color = Color(0.44, 0.73, 0.98, 1)
 interface/theme/contrast = 0.3
@@ -147,5 +148,6 @@ editors/3d_gizmos/gizmo_colors/joint_body_b = Color(0.6, 0.9, 1, 1)
 editors/3d_gizmos/gizmo_colors/fog_volume = Color(0.5, 0.7, 1, 1)
 metadata/script_setup_templates_dictionary = {
 "Area2D": "0NodeDefault",
-"Button": "0NodeDefault"
+"Button": "0NodeDefault",
+"Node": "0NodeDefault"
 }

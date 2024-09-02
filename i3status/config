@@ -6,12 +6,24 @@ general {
 }
 
 order += "wireless _first_"
-order += "load"
+order += "cpu_usage"
 order += "cpu_temperature all"
 order += "memory"
 order += "battery all"
 order += "volume master"
 order += "time"
+
+wireless _first_ {
+    color_good = "#FFFFFF"
+    format_up = "🌐 %essid (%bitrate)   "
+    format_down = "🚫 No Wifi   "
+}
+
+cpu_usage {
+	format = "💻%usage"
+	min_width = 110
+	align = center
+}
 
 cpu_temperature all {
     format = "🌡️%degrees°C"
@@ -21,10 +33,13 @@ cpu_temperature all {
     align = center
 }
 
-wireless _first_ {
-    color_good = "#FFFFFF"
-    format_up = "🌐 %essid (%bitrate)   "
-    format_down = "🚫 No Wifi   "
+memory {
+    format = "💾%percentage_used"
+    threshold_degraded = "4.2Gi"
+    format_degraded = "❗%percentage_used❗"
+    threshold_critical = "2.7Gi"
+    min_width = 150
+    align = center
 }
 
 battery all {
@@ -40,28 +55,13 @@ battery all {
     align = center
 }
 
-load {
-    format = "💻%1min"
-    max_threshold = "2"
-    format_above_threshold = "❗%1min❗"
-    min_width = 130
-    align = center
-}
-
-memory {
-    format = "💾%percentage_used"
-    threshold_degraded = "4.2Gi"
-    format_degraded = "❗%percentage_used❗"
-    threshold_critical = "2.7Gi"
-    min_width = 150
-    align = center
-}
-
-time {
-    format = "🗓️%Y-%m-%d   🕒%I:%M %p"
-    min_width = 385
-    align = center
-}
+#load {
+#    format = "💻%1min"
+#    max_threshold = "3"
+#    format_above_threshold = "❗%1min❗"
+#    min_width = 130
+#    align = center
+#}
 
 volume master{
     format = "🔊%volume"
@@ -72,3 +72,8 @@ volume master{
     align = center
 }
 
+time {
+    format = "🗓️%Y-%m-%d   🕒%I:%M %p"
+    min_width = 385
+    align = center
+}

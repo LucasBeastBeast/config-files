@@ -16,14 +16,14 @@ for_window [class=".*"] client.focused #77dd77
 # assign workspaces to the apps
 assign [class="kitty"] 1
 assign [class="Godot"] 2
-assign [title="untitled \(DEBUG\)"] 3
+for_window [title="untitled \(DEBUG\)"] move to workspace 3
 assign [instance="brave-browser"] 4
 assign [class="discord"] 5
 assign [instance="crx_pjibgclleladliembfgfagdaldikeohf"] 6
 
 # enable touchpad tapping and natural scrolling
-exec --no-startup-id xinput set-prop 10 "libinput Tapping Enabled" 1
-exec --no-startup-id xinput set-prop 10 "libinput Natural Scrolling Enabled" 1
+exec --no-startup-id xinput set-prop "ASUE140D:00 04F3:31BC Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop "ASUE140D:00 04F3:31BC Touchpad" "libinput Natural Scrolling Enabled" 1
 
 # restore the applied wallpaper
 exec --no-startup-id nitrogen --restore
@@ -32,7 +32,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom -b
 
 # run apps on startup
-exec --no-startup-id i3-sensible-terminal 
+exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id brave-browser
 exec --no-startup-id discord
 exec --no-startup-id /opt/brave.com/brave/brave-browser --app-id=pjibgclleladliembfgfagdaldikeohf
